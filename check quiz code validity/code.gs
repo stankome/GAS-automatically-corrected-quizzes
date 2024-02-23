@@ -51,7 +51,7 @@ function updateNumber_(element){
 };
 
 function checkAndstoreCodes(code,quiznr,browserVer,timeStamp) {  
-  var url = "url of google spreadsheet";
+  var url = "url of google spreadsheet";//example: https://docs.google.com/spreadsheets/d/1KZ6JCegEt6v1XAons5xOrtnItbq82UQc6NbbBmDmQAg/edit?usp=sharing
   var ss = SpreadsheetApp.openByUrl(url);
   var ws = ss.getSheetByName(quiznr); 
   var data = ws.getDataRange().getValues();
