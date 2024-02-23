@@ -26,6 +26,8 @@ function CheckAnswers(element,browser){
       return updateNumber_(browser);
   };
   return `<em style='color:red'> You didn't pass, try again!`;
+//alternative, to show the grade:
+//return `<em style='color:red'> You didn't pass, try again! `+ "("+ String(grade*9/100)+" questions correct)";
 };
  
 /**#####################################
@@ -36,7 +38,7 @@ function CheckAnswers(element,browser){
   */
 function updateNumber_(browser){
   var timestamp = Number(new Date());
-  Phrase='Quiz08-'+browser.name.toString()+browser.version.toString()+'-'+timestamp.toString();
+  Phrase='Quizname'+browser.name.toString()+browser.version.toString()+'-'+timestamp.toString();
   const encryptedMessage = cCryptoGS.CryptoJS.AES.encrypt(Phrase, 'passphrase').toString();
   return `<em style='color:blue'> Success!, your code: `+ encryptedMessage;
 };
