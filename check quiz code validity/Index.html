@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <base target="_top" />
+  </head>
+  <body>
+<p>Quiz code checker</label>
+<p>Input the code to check</label>
+<input type="text" id="Q1" name="Q1">
+    <span>  </span>
+    <p>Submit: </p>
+    <input 
+        id="submitBtn" 
+        type="submit" 
+        value="Submit" 
+        onclick="sendData()" />
+    <p>Submission message </p>  
+     <div id="result">
+      <em> Your result will appear here!</em>
+    </div>
+ <script>
+       /**
+         * Send number to Google Apps Script and returns a calculated 
+         * value back to display on page. 
+         */
+      function sendData() {
+        //Get inputted number and result div
+        let ans1 = document.querySelector('#Q1').value;
+        let updateLocation = document.querySelector('#result');
+        
+        //If the Google Apps script fails this error will be displayed
+        // under result. 
+        // NOTE!!! not advisable for public deployment.
+        function onFailure(error){
+          let warning = `<span style="color:red">${error}</span>`;
+          updateLocation.innerHTML = warning;
+        };
+        
+        // The calculated result will be displayed in the result div.
+        function onSuccess(element){
+          let result = ` Message: ${element}`;
+          updateLocation.innerHTML = result;
+        };
+        
+        /** First tests if GAS code is successful,
+          * attempts to run GAS-side function.
+          * on failure sends to onFailure function with nature of error.
+          * on success sends to onSuccess function with returned result.
+          */
+        google.script.run.withFailureHandler(onFailure)
+                         .withSuccessHandler(onSuccess)
+                         .CheckAnswers(ans1);
+ 
+      };
+    </script>
+    
+  </body>
+</html>
