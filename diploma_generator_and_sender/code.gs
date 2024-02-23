@@ -19,7 +19,7 @@ function ProcessInput(element){
   let email=element[1];
   let validation=1;
   let concatenatedInfo=Pname+'-'+email+'-';
-  CodeSheetID="" ;//Google spreadsheet Template ID
+  CodeSheetID="" ;//Google spreadsheet Template ID, example: https://docs.google.com/spreadsheets/d/1cGcYggRFaaS5OxGf79aSxb56tRDorJFsRZxNLXAWfj4/edit?usp=sharing
   //looping through each activity code provided
   for(var i = 2; i<element.length;i++){
     j=i-1;
@@ -90,7 +90,7 @@ function Emailpdf(Pname,email,DocID){
   return }
 
 function createCertificate(Pname, Diplomacode){
-  const TEMPLATE_ID = '';//Google Slide Template ID
+  const TEMPLATE_ID = '';//Google Slide Template ID, example: https://docs.google.com/presentation/d/13PPYWf8QFOWO-owwm9AfKrov3rpUxhKOLn_gj5uOENI/edit?usp=sharing
   let newDoc = DriveApp.getFileById(TEMPLATE_ID).makeCopy('Diploma');
   let textID = `{{name}}`;
   let NewDiplomaID=newDoc.getId();
