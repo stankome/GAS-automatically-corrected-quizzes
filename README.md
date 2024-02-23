@@ -12,5 +12,7 @@ Requirements:
 Inspiration:
 
 -https://medium.com/swlh/create-pdf-using-googleapps-script-6d974f3f06c4
+
 -https://yagisanatode.com/google-apps-script-automated-pdf-certificated-creator-that-is-emailed-to-the-attendee/
+
 -https://www.googleappsscript.org/home
