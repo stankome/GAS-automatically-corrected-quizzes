@@ -19,7 +19,7 @@ function ProcessInput(element){
   let email=element[1];
   let validation=1;
   let concatenatedInfo=Pname+'-'+email+'-';
-  CodeSheetID="" ;//Google Slide Template ID
+  CodeSheetID="" ;//Google spreadsheet Template ID
   //looping through each activity code provided
   for(var i = 2; i<element.length;i++){
     j=i-1;
